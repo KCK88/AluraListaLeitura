@@ -59,5 +59,13 @@ namespace Alura.ListaLeitura.App.Logica
                 return context.Response.WriteAsync(_repo.Lendo.ToString());
             }
         }
+        public static Task LivrosLidos(HttpContext context)
+        {
+            {
+                var _repo = new LivroRepositorioCSV();
+
+                return context.Response.WriteAsync(_repo.Lidos.ToString());
+            }
+        }
     }
 }
