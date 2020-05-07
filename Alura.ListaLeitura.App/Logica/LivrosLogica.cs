@@ -26,6 +26,14 @@ namespace Alura.ListaLeitura.App.Logica
             return conteudoArquivo.Replace("#NOVO-ITEM#", "");
         }
 
+        public static string CarregaArquivoHTML(string nomeArquivo)
+        {
+            var nomeCompletoArquivo = $"HTML/{nomeArquivo}.html";
+            using (var arquivo = File.OpenText(nomeCompletoArquivo))
+            {
+                return arquivo.ReadToEnd();
+            }
+        }
         
     }
 }
